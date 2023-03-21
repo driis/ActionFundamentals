@@ -1,0 +1,21 @@
+name: Github Actions Demo
+on: 
+  push: 
+    branches: 
+      - main
+    paths-ignore: ".github"
+  schedule:
+    - cron: "15 6 * * 0"
+  pull_request:
+    branches: 
+      - main
+  workflow_dispatch:
+
+jobs:   
+  hello:
+    runs-on: ubuntu-latest
+    steps:    
+      - name: Say hello
+        run: | 
+          echo "Hello, world !"
+      
