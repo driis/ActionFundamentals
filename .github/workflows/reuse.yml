@@ -1,5 +1,6 @@
 name: Reuse other workflow
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
 jobs:
   reuse:
     name: Reuse Hello
