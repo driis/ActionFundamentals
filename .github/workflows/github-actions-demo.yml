@@ -12,11 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        type: choice
-        options:
-          - Prod
-          - Test
-          - LoadTest
+        type: environment
         required: true
         description: Which environment would you like to use
         default: Test
