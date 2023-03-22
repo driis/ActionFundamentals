@@ -11,7 +11,9 @@ jobs:
       - name: Debug
         run: |
           echo "$(pwd)"
-          ls -l **/*
+          ls -l ./.github/workflows
+          echo "Debug output"
+          cat  ./.github/workflows/reusable.yml
       - name: Call the worflows
         id: call
         uses: ./.github/workflows/reusable.yml
