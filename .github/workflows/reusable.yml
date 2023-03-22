@@ -8,19 +8,19 @@ on:
         description: "Who would you like to greet ?"
     outputs:
       time:
-        value: ${{jobs.reusable-job.outputs.time}}
+        value: ${{jobs.reusable-job.outputs.current-time}}
 jobs:
   resuable-job:
     name: Reusable
     runs-on: ubuntu-latest
     outputs:
-      time: ${{steps.time.outputs.time}}
+      current-time: ${{steps.time.outputs.time}}
     steps:
       - name: Say Hello
         run: |
           echo "Hello ${{inputs.who-to-greet}}"
       - name: Record time
-        id: time
+        id: time        
         run: |
           time=$(date)
           echo "Time is $time"
