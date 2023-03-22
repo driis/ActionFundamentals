@@ -10,6 +10,17 @@ on:
     branches: 
       - main
   workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        options:
+          - Prod
+          - Test
+          - LoadTest
+        required: true
+        description: Which environment would you like to use
+        default: Test
+        
 
 jobs:   
   hello:
